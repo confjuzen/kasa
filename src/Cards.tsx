@@ -14,26 +14,26 @@ function Cards() {
   }
 
   return (
-    <>
+    <div className="home">
       <div className="banner">
         <p>Chez vous, partout et ailleurs</p>
 
         <img src="banner1.webp" alt="banner" />
 
       </div>
-      <div className="cards">
-        {data.length > 0 ? (
-          data.map((item) => (
-            <Link key={item.id} to={item.id}>
-              <img src={item.cover} alt={item.title} />
-              <p>{item.title}</p>
-            </Link>
-          ))
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-    </>
+        <div className="cards">
+          {data.length > 0 ? (
+            data.map((item) => (
+              <Link key={item.id} to={item.id}>
+                <img src={item.cover} alt={item.title} />
+                <p>{item.title}</p>
+              </Link>
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+    </div>
   );
 }
 
