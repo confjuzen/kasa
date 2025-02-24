@@ -18,15 +18,18 @@ import Kasa from "./Kasa.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Router>
-      <Header />
+      <div className="content-container">
+        <Header />
         <main>
           <Routes>
             <Route path="/" element={<Cards />} />
-            <Route path="/*" element={<NotFoundError />} />
             <Route path="/a-propos/" element={<About />} />
             <Route path="/:id" element={<Kasa />} />
+            <Route path="/404" element={<NotFoundError />} />
+            <Route path="*" element={<NotFoundError />} />
           </Routes>
         </main>
+      </div>
       <Footer />
     </Router>
   </StrictMode>

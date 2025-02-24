@@ -1,9 +1,6 @@
 import { useEffect , useState } from "react";
 
-const url = "http://localhost:5555/api/logements";
-
-async function getData() {
-
+async function getData(url: string) {
 
   const response = await fetch(url);
   if (!response.ok) {
@@ -17,20 +14,19 @@ async function getData() {
   }
 }
 
-const useData = () => {
+const useData = (url: string) => {
 
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    getData()
+    if (!url) return;
+    getData(url)
       .then((data) => setData(data))
       .catch((err) => setError(err.message)); // Ensure we store a string, not an Error object
   }, []);
 
   return { data, error };
-
-
 }
 
 export default useData;

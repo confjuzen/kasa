@@ -1,18 +1,36 @@
 const express = require("express");
 const cors = require("cors");
-const app = express();
+const fs = require("fs");
 const path = require("path");
 
-// Enable CORS (allows React frontend to fetch from the backend)
+const app = express();
 app.use(cors());
 
-// Serve JSON file at `/api/logements`
+// Read logements.json once (for performance)
+const logementsPath = path.join(__dirname, "logements.json");
+
+function getLogements() {
+  return JSON.parse(fs.readFileSync(logementsPath, "utf8"));
+}
+
+// Route to get ALL logements
 app.get("/api/logements", (req, res) => {
-  res.sendFile(path.join(__dirname, "logements.json"));
+  res.json(getLogements());
 });
 
-// Start the server
-const PORT = 5555; // Change this if needed
+// Route to get logement by ID
+app.get("/api/logements/:id", (req, res) => {
+  const logements = getLogements();
+  const logement = logements.find((item) => item.id == req.params.id);
+
+  if (!logement) {
+    return res.status(404).json({ error: "Logement not found" });
+  }
+
+  res.json(logement);
+});
+
+const PORT = 5555;
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
