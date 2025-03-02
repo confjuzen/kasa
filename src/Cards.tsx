@@ -3,7 +3,6 @@ import useData from "./useData.tsx";
 import { Link } from "react-router-dom";
 
 
-const url = "http://localhost:5555/api/logements/";
 
 function Cards() {
 
@@ -24,7 +23,7 @@ function Cards() {
         <div className="cards">
           {data.length > 0 ? (
             data.map((item) => (
-              <Link key={item.id} to={item.id}>
+              <Link key={item.id} to={item.id} className="card">
                 <img src={item.cover} alt={item.title} />
                 <p>{item.title}</p>
               </Link>
