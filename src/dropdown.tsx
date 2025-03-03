@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Dropdown({ title, content }: { title: string; content: string }) {
+function Dropdown({ title, content}: { title: string; content: string}) {
   const [isOpen, setIsOpen] = useState(false);
 
   function Arow() {
@@ -26,14 +26,14 @@ function Dropdown({ title, content }: { title: string; content: string }) {
 
   function Dropdowncontent() {
     if (isOpen) {
-      return <p>{content}</p>;
+      return <>{content}</>;
     } else {
-      return null;
+      return <>{content}</>;
     }
   }
 
   return (
-    <div className="Dropdown">
+    <div className={'Dropdown ' + title}>
       <div
         onClick={handleClick}
         className="Dropdown-header"
@@ -43,12 +43,12 @@ function Dropdown({ title, content }: { title: string; content: string }) {
         <h2>{title}</h2>
         <Arow />
       </div>
-      <div
-        className={`Dropdown-content ${isOpen ? "active" : "hidden"}`}
+      <p
+        className={`Dropdown-content ${isOpen ? "active-content" : "hidden-content"}`}
         aria-hidden={!isOpen}
       >
         <Dropdowncontent />
-      </div>
+      </p>
     </div>
   );
 }
