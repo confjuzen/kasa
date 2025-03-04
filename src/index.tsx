@@ -3,17 +3,13 @@ import { createRoot } from "react-dom/client";
 import "./style.scss";
 import { BrowserRouter as Router,Route, Routes } from 'react-router-dom';
 
-import Header from "./Header.tsx";
-import Footer from "./Footer.tsx";
+import Header from "./components/Header.tsx";
+import Footer from "./components/Footer.tsx";
 
-import Cards from "./Cards.tsx";
-import NotFoundError from "./NotFoundError.tsx";
-import About from "./About.tsx";
-import Kasa from "./Kasa.tsx";
-
-
-
-
+import Cards from "./pages/Cards.tsx";
+import NotFoundError from "./pages/NotFoundError.tsx";
+import About from "./pages/About.tsx";
+import Kasa from "./pages/Kasa.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

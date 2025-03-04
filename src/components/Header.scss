@@ -1,0 +1,11 @@
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding: min(1vw, 10px) 0px;
+    z-index: 2;
+    background-color: #fff;
+}

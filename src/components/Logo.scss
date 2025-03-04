@@ -1,0 +1,26 @@
+.logo {
+  padding: min(1vw, 10px) min(2vw, 20px);
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  path {
+    transition: 0.3s ease-in-out;
+  }
+}
+.logo:hover {
+  fill: #fff;
+  background-color: #ff6060;
+  path {
+    fill: #fff;
+  }
+}
+.small {
+  display: none;
+}
+@media screen and (max-width: 650px) {
+  .big {
+    display: none;
+  }
+  .small {
+    display: block;
+  }
+}

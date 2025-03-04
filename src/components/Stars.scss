@@ -1,0 +1,11 @@
+.stars {
+  grid-column: 3 / 5;
+  grid-row: 3 / 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1vw;
+  svg {
+    padding: calc(8px - 1vw);
+  }
+}

@@ -1,0 +1,16 @@
+.tags {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: min(1vw, 10px);
+  p {
+    background-color: #ff6060;
+    border-radius: 10px;
+    padding: 2px 30px;
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(12px, 3vw, 14px);
+  }
+}

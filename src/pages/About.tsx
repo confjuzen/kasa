@@ -1,5 +1,5 @@
-import Dropdown from "./dropdown";
-
+import Dropdown from "../components/dropdown";
+import "./About.scss";
 function About() {
   return (
     <div className="about">

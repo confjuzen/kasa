@@ -1,8 +1,6 @@
-import useData from "./useData.tsx";
-
+import useData from "../useData.tsx";
 import { Link } from "react-router-dom";
-
-
+import "./Cards.scss";
 
 function Cards() {
 
@@ -16,9 +14,7 @@ function Cards() {
     <div className="home">
       <div className="banner">
         <p>Chez vous, partout et ailleurs</p>
-
         <img src="banner1.webp" alt="banner" />
-
       </div>
         <div className="cards">
           {data.length > 0 ? (
