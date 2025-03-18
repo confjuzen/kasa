@@ -6,7 +6,7 @@
   "main": "backend/server.js",
   "proxy": "http://localhost:5555",
   "scripts": {
-    "dev": "vite && nodemon server",
+    "dev": "vite",
     "build": "tsc -b & vite build",
     "lint": "eslint .",
     "preview": "vite preview"
