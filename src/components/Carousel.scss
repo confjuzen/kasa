@@ -30,3 +30,13 @@
 .prev {
   left: 10px;
 }
+.carousel-numbers {
+  z-index: 1;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
